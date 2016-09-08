@@ -34,8 +34,8 @@ private func detectDefaultLevel() -> LogLevel {
 
 private var globalLevel: LogLevel = detectDefaultLevel()
 private var globalPrefixes: [LogLevel : String] = [.Error : "ERROR: ",
-                                             .Verbose : "VERBOSE: ",
-                                             .Debug : "DEBUG: "]
+                                                   .Verbose : "VERBOSE: ",
+                                                   .Debug : "DEBUG: "]
 
 // MARK:
 // MARK: User-Facing Functions
@@ -73,8 +73,8 @@ public func setLogLevelPrefix(forLevel targetLevel: LogLevel, to newPrefix: Stri
 public class LogCabin {
     public var level: LogLevel = detectDefaultLevel()
     private var prefixes: [LogLevel : String] = [.Error : "ERROR: ",
-                                         .Verbose : "VERBOSE: ",
-                                         .Debug : "DEBUG: "]
+                                                 .Verbose : "VERBOSE: ",
+                                                 .Debug : "DEBUG: "]
     
     convenience init() {
         self.init(level: .Error)
