@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B33F091E1D775558009D9B0F /* LogCountry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B33F09141D775558009D9B0F /* LogCountry.framework */; };
+		B33F091E1D775558009D9B0F /* LogCountry_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B33F09141D775558009D9B0F /* LogCountry_iOS.framework */; };
 		B33F09231D775558009D9B0F /* LogCountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F09221D775558009D9B0F /* LogCountryTests.swift */; };
 		B33F09251D775558009D9B0F /* LogCountry.h in Headers */ = {isa = PBXBuildFile; fileRef = B33F09171D775558009D9B0F /* LogCountry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B33F092F1D7755AD009D9B0F /* LogCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33F092E1D7755AD009D9B0F /* LogCountry.swift */; };
@@ -24,7 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B33F09141D775558009D9B0F /* LogCountry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LogCountry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B33F09141D775558009D9B0F /* LogCountry_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LogCountry_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33F09171D775558009D9B0F /* LogCountry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogCountry.h; sourceTree = "<group>"; };
 		B33F09181D775558009D9B0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B33F091D1D775558009D9B0F /* LogCountryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogCountryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B33F091E1D775558009D9B0F /* LogCountry.framework in Frameworks */,
+				B33F091E1D775558009D9B0F /* LogCountry_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +64,7 @@
 		B33F09151D775558009D9B0F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B33F09141D775558009D9B0F /* LogCountry.framework */,
+				B33F09141D775558009D9B0F /* LogCountry_iOS.framework */,
 				B33F091D1D775558009D9B0F /* LogCountryTests.xctest */,
 			);
 			name = Products;
@@ -103,9 +103,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B33F09131D775558009D9B0F /* LogCountry */ = {
+		B33F09131D775558009D9B0F /* LogCountry_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B33F09281D775558009D9B0F /* Build configuration list for PBXNativeTarget "LogCountry" */;
+			buildConfigurationList = B33F09281D775558009D9B0F /* Build configuration list for PBXNativeTarget "LogCountry_iOS" */;
 			buildPhases = (
 				B33F090F1D775558009D9B0F /* Sources */,
 				B33F09101D775558009D9B0F /* Frameworks */,
@@ -116,9 +116,9 @@
 			);
 			dependencies = (
 			);
-			name = LogCountry;
+			name = LogCountry_iOS;
 			productName = LogCountry;
-			productReference = B33F09141D775558009D9B0F /* LogCountry.framework */;
+			productReference = B33F09141D775558009D9B0F /* LogCountry_iOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B33F091C1D775558009D9B0F /* LogCountryTests */ = {
@@ -176,7 +176,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B33F09131D775558009D9B0F /* LogCountry */,
+				B33F09131D775558009D9B0F /* LogCountry_iOS */,
 				B33F091C1D775558009D9B0F /* LogCountryTests */,
 			);
 		};
@@ -221,7 +221,7 @@
 /* Begin PBXTargetDependency section */
 		B33F09201D775558009D9B0F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B33F09131D775558009D9B0F /* LogCountry */;
+			target = B33F09131D775558009D9B0F /* LogCountry_iOS */;
 			targetProxy = B33F091F1D775558009D9B0F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -397,7 +397,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B33F09281D775558009D9B0F /* Build configuration list for PBXNativeTarget "LogCountry" */ = {
+		B33F09281D775558009D9B0F /* Build configuration list for PBXNativeTarget "LogCountry_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B33F09291D775558009D9B0F /* Debug */,
