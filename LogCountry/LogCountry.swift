@@ -21,7 +21,7 @@ public enum LogLevel: Int {
 // MARK: Automatic Configuration
 
 private func detectDefaultLevel() -> LogLevel {
-    #if !DEBUG || LOGLEVELSILENT
+    #if LOGLEVELSILENT
         return LogLevel.Silent
     #elseif LOGLEVELVERBOSE
         return LogLevel.Verbose
@@ -76,11 +76,11 @@ public class LogCabin {
                                                  .Verbose : "VERBOSE: ",
                                                  .Debug : "DEBUG: "]
     
-    convenience init() {
+    public convenience init() {
         self.init(level: .Error)
     }
     
-    init(level targetLogLevel: LogLevel) {
+    public init(level targetLogLevel: LogLevel) {
         self.level = targetLogLevel
     }
     
