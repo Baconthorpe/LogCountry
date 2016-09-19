@@ -33,18 +33,14 @@ private func detectDefaultLevel() -> LogLevel {
 }
 
 private var globalLevel: LogLevel = detectDefaultLevel()
-private var globalPrefixes: [LogLevel : String] = [.Error : "ERROR: ",
+private var globalPrefixes: [LogLevel : String] = [.Error : "",
                                                    .Verbose : "VERBOSE: ",
                                                    .Debug : "DEBUG: "]
 
 // MARK:
 // MARK: User-Facing Functions
 
-public func log(_ message: String) {
-    log(.Error, message)
-}
-
-public func log(_ targetLevel: LogLevel, _ message: String) {
+public func log(_ targetLevel: LogLevel = .Error, _ message: String) {
     guard targetLevel != .Silent else { return }
     if targetLevel.rawValue <= globalLevel.rawValue {
         if let prefix = globalPrefixes[targetLevel] {
@@ -72,7 +68,7 @@ public func setLogLevelPrefix(forLevel targetLevel: LogLevel, to newPrefix: Stri
 
 public class LogCabin {
     public var level: LogLevel = detectDefaultLevel()
-    private var prefixes: [LogLevel : String] = [.Error : "ERROR: ",
+    private var prefixes: [LogLevel : String] = [.Error : "",
                                                  .Verbose : "VERBOSE: ",
                                                  .Debug : "DEBUG: "]
     
@@ -84,11 +80,7 @@ public class LogCabin {
         self.level = targetLogLevel
     }
     
-    public func log(_ message: String) {
-        self.log(.Error, message)
-    }
-    
-    public func log(_ targetLevel: LogLevel, _ message: String) {
+    public func log(_ targetLevel: LogLevel = .Error, _ message: String) {
         guard targetLevel != .Silent else { return }
         if targetLevel.rawValue <= self.level.rawValue {
             if let prefix = self.prefixes[targetLevel] {
@@ -96,7 +88,6 @@ public class LogCabin {
             } else {
                 print(message)
             }
-            print("\(self.prefixes[targetLevel])\(message)")
         }
     }
     
