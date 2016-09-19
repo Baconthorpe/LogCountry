@@ -40,7 +40,11 @@ private var globalPrefixes: [LogLevel : String] = [.Error : "",
 // MARK:
 // MARK: User-Facing Functions
 
-public func log(_ targetLevel: LogLevel = .Error, _ message: String) {
+public func log(_ message: String) {
+    log(.Error, message)
+}
+
+public func log(_ targetLevel: LogLevel, _ message: String) {
     guard targetLevel != .Silent else { return }
     if targetLevel.rawValue <= globalLevel.rawValue {
         if let prefix = globalPrefixes[targetLevel] {
@@ -80,7 +84,11 @@ public class LogCabin {
         self.level = targetLogLevel
     }
     
-    public func log(_ targetLevel: LogLevel = .Error, _ message: String) {
+    public func log(_ message: String) {
+        self.log(.Error, message)
+    }
+    
+    public func log(_ targetLevel: LogLevel, _ message: String) {
         guard targetLevel != .Silent else { return }
         if targetLevel.rawValue <= self.level.rawValue {
             if let prefix = self.prefixes[targetLevel] {
