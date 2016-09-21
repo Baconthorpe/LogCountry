@@ -32,10 +32,10 @@ private func detectDefaultLevel() -> LogLevel {
     return LogLevel.Error
 }
 
-private var globalLevel: LogLevel = detectDefaultLevel()
-private var globalPrefixes: [LogLevel : String] = [.Error : "",
-                                                   .Verbose : "VERBOSE: ",
-                                                   .Debug : "DEBUG: "]
+// MARK:
+// MARK: Singleton
+
+let mainCabin = LogCabin(level: detectDefaultLevel())
 
 // MARK:
 // MARK: User-Facing Functions
@@ -45,26 +45,19 @@ public func log(_ message: String) {
 }
 
 public func log(_ targetLevel: LogLevel, _ message: String) {
-    guard targetLevel != .Silent else { return }
-    if targetLevel.rawValue <= globalLevel.rawValue {
-        if let prefix = globalPrefixes[targetLevel] {
-            print(prefix + message)
-        } else {
-            print(message)
-        }
-    }
+    mainCabin.log(targetLevel, message)
 }
 
 public func currentLogLevel() -> LogLevel {
-    return globalLevel
+    return mainCabin.level
 }
 
 public func setLogLevel(to targetLogLevel: LogLevel) {
-    globalLevel = targetLogLevel
+    mainCabin.level = targetLogLevel
 }
 
 public func setLogLevelPrefix(forLevel targetLevel: LogLevel, to newPrefix: String) {
-    globalPrefixes[targetLevel] = newPrefix
+    mainCabin.setLogLevelPrefix(forLevel: targetLevel, to: newPrefix)
 }
 
 // MARK:
