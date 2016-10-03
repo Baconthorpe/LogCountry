@@ -2,7 +2,7 @@
 //  LogCountryTests.swift
 //  LogCountryTests
 //
-//  Created by Ezekiel Abuhoff on 8/31/16.
+//  Created by Ezekiel Abuhoff on 10/2/16.
 //  Copyright © 2016 Zeke Abuhoff. All rights reserved.
 //
 
@@ -17,43 +17,43 @@ class LogCountryTests: XCTestCase {
     let message = "MESSAGE"
     
     func configurePrefixes() {
-        setLogLevelPrefix(forLevel: .Error, to: "ERROR PREFIX: ")
-        setLogLevelPrefix(forLevel: .Verbose, to: "VERBOSE PREFIX: ")
-        setLogLevelPrefix(forLevel: .Debug, to: "DEBUG PREFIX: ")
+        setLogLevelPrefix(forLevel: .error, to: "ERROR PREFIX: ")
+        setLogLevelPrefix(forLevel: .verbose, to: "VERBOSE PREFIX: ")
+        setLogLevelPrefix(forLevel: .debug, to: "DEBUG PREFIX: ")
     }
     
     func logAtAllLevels() {
-        log(.Error, message)
-        log(.Verbose, message)
-        log(.Debug, message)
+        log(.error, message)
+        log(.verbose, message)
+        log(.debug, message)
     }
     
     // MARK:
     // MARK: Basic Logging
     
     func testLogToSilent() {
-        setLogLevel(to: .Silent)
+        setLogLevel(to: .silent)
         
         configurePrefixes()
         logAtAllLevels()
     }
     
     func testLogToError() {
-        setLogLevel(to: .Error)
+        setLogLevel(to: .error)
         
         configurePrefixes()
         logAtAllLevels()
     }
     
     func testLogToVerbose() {
-        setLogLevel(to: .Verbose)
+        setLogLevel(to: .verbose)
         
         configurePrefixes()
         logAtAllLevels()
     }
     
     func testLogToDebug() {
-        setLogLevel(to: .Debug)
+        setLogLevel(to: .debug)
         
         configurePrefixes()
         logAtAllLevels()
@@ -63,14 +63,13 @@ class LogCountryTests: XCTestCase {
     // MARK: LogCabin
     
     func testLoggingFromLogCabin() {
-        let cabin = LogCabin(level: .Debug)
-        cabin.setLogLevelPrefix(forLevel: .Error, to: "CABIN ERROR: ")
-        cabin.setLogLevelPrefix(forLevel: .Verbose, to: "CABIN VERBOSE: ")
-        cabin.setLogLevelPrefix(forLevel: .Debug, to: "CABIN DEBUG: ")
+        let cabin = LogCabin(level: .debug)
+        cabin.setLogLevelPrefix(forLevel: .error, to: "CABIN ERROR: ")
+        cabin.setLogLevelPrefix(forLevel: .verbose, to: "CABIN VERBOSE: ")
+        cabin.setLogLevelPrefix(forLevel: .debug, to: "CABIN DEBUG: ")
         
-        cabin.log(.Error, message)
-        cabin.log(.Verbose, message)
-        cabin.log(.Debug, message)
+        cabin.log(.error, message)
+        cabin.log(.verbose, message)
+        cabin.log(.debug, message)
     }
 }
-

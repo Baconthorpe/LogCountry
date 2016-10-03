@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B33F09131D775558009D9B0F"
-               BuildableName = "LogCountry_iOS.framework"
-               BlueprintName = "LogCountry_iOS"
+               BuildableName = "LogCountry.framework"
+               BlueprintName = "LogCountry"
                ReferencedContainer = "container:LogCountry.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B33F09131D775558009D9B0F"
-            BuildableName = "LogCountry_iOS.framework"
-            BlueprintName = "LogCountry_iOS"
+            BuildableName = "LogCountry.framework"
+            BlueprintName = "LogCountry"
             ReferencedContainer = "container:LogCountry.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,8 +65,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B33F09131D775558009D9B0F"
-            BuildableName = "LogCountry_iOS.framework"
-            BlueprintName = "LogCountry_iOS"
+            BuildableName = "LogCountry.framework"
+            BlueprintName = "LogCountry"
             ReferencedContainer = "container:LogCountry.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,8 +83,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B33F09131D775558009D9B0F"
-            BuildableName = "LogCountry_iOS.framework"
-            BlueprintName = "LogCountry_iOS"
+            BuildableName = "LogCountry.framework"
+            BlueprintName = "LogCountry"
             ReferencedContainer = "container:LogCountry.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

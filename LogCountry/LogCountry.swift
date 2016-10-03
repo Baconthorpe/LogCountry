@@ -11,10 +11,10 @@ import Foundation
 // MARK: Log Level
 
 public enum LogLevel: Int {
-    case Silent = 0
-    case Error
-    case Verbose
-    case Debug
+    case silent = 0
+    case error
+    case verbose
+    case debug
 }
 
 // MARK:
@@ -22,14 +22,14 @@ public enum LogLevel: Int {
 
 private func detectDefaultLevel() -> LogLevel {
     #if LOGLEVELSILENT
-        return LogLevel.Silent
+        return LogLevel.silent
     #elseif LOGLEVELVERBOSE
-        return LogLevel.Verbose
+        return LogLevel.verbose
     #elseif LOGLEVELDEBUG
-        return LogLevel.Debug
+        return LogLevel.debug
     #endif
     
-    return LogLevel.Error
+    return LogLevel.error
 }
 
 // MARK:
@@ -41,7 +41,7 @@ let mainCabin = LogCabin(level: detectDefaultLevel())
 // MARK: User-Facing Functions
 
 public func log(_ message: String) {
-    log(.Error, message)
+    log(.error, message)
 }
 
 public func log(_ targetLevel: LogLevel, _ message: String) {
@@ -65,12 +65,12 @@ public func setLogLevelPrefix(forLevel targetLevel: LogLevel, to newPrefix: Stri
 
 public class LogCabin {
     public var level: LogLevel = detectDefaultLevel()
-    private var prefixes: [LogLevel : String] = [.Error : "",
-                                                 .Verbose : "VERBOSE: ",
-                                                 .Debug : "DEBUG: "]
+    private var prefixes: [LogLevel : String] = [.error : "",
+                                                 .verbose : "VERBOSE: ",
+                                                 .debug : "DEBUG: "]
     
     public convenience init() {
-        self.init(level: .Error)
+        self.init(level: .error)
     }
     
     public init(level targetLogLevel: LogLevel) {
@@ -78,11 +78,11 @@ public class LogCabin {
     }
     
     public func log(_ message: String) {
-        self.log(.Error, message)
+        self.log(.error, message)
     }
     
     public func log(_ targetLevel: LogLevel, _ message: String) {
-        guard targetLevel != .Silent else { return }
+        guard targetLevel != .silent else { return }
         if targetLevel.rawValue <= self.level.rawValue {
             if let prefix = self.prefixes[targetLevel] {
                 print(prefix + message)
