@@ -19,13 +19,13 @@ log("Is this thing on?")  // This message will not appear in the logs.
 Set the level to `error` to print only the most important messages. You can specify `error` as a message's level, but `log()` messages print at that level by default, anyway.
 ```swift
 setLogLevel(to: .error)
-log(.error, "Do you concur, doctor?") // This will print.
-log("Yes, doctor, I concur.") // So will this.
+log(.error, "Do you concur, doctor?")  // This will print.
+log("Yes, doctor, I concur.")          // So will this.
 ```
 Set the level to `debug` if you want to see messages that describe the normal operation of a program, as well as error messages.
 ```swift
 setLogLevel(.debug)
-log(.debug, "Loading files...") // This will print.
+log(.debug, "Loading files...")     // This will print.
 log(.error, "Aaand they're gone.")  // So will this.
 ```
 Set the level to `verbose` if you want all log messages printed.
@@ -43,15 +43,15 @@ Specifying log levels for your messages can help you more effectively debug. And
 
 Long logs can be hard to read - which message was logged at which level? LogCountry helps you straighten things out by supporting prefixes for each log level.
 
-A log level prefix is a message that preceds every log made at a particular level. By default, the `error` level has no prefix, but `debug` has "DEBUG: " and `verbose` has "VERBOSE ".
+A log level prefix is a message that precedes every log made at a particular level. By default, the `error` level has no prefix, but `debug` has "DEBUG: " and `verbose` has "VERBOSE ".
 
 You can set these levels to whatever you prefer.
 ```swift
 setLogLevelPrefix(for: .error, to: "ERROR DETECTED - ")
 setLogLevelPrefix(for: .debug, to: "D - ")
 
-log(.error, "No internet.") // Will print as 'ERROR DETECTED - No internet.'
-log(.debug, "Searching for internet...")  // Will print as 'D - Searching for internet...'
+log(.error, "No internet.")               // This will print as 'ERROR DETECTED - No internet.'
+log(.debug, "Searching for internet...")  // This will print as 'D - Searching for internet...'
 ```
 
 ### Modular Logging
@@ -63,7 +63,7 @@ No problem! You can instantiate a `LogCabin` that will keep all your level and p
 let uiCabin = LogCabin()
 uiCabin.setLogLevelPrefix(for: .debug, to: "UI Debug: ")
 uiCabin.setLogLevel(to: .debug)
-uiCabin.log(.debug, "The login screen has appeared.") // Will print as 'UI Debug: The login screen has appeared.'
+uiCabin.log(.debug, "The login screen has appeared.")  // Will print as 'UI Debug: The login screen has appeared.'
 ```
 Setting up instances of `LogCabin` can help you make logs specific to each part of an app. They're also handy if you're making a framework and want to keep everything in-house.
 
