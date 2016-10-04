@@ -18,24 +18,9 @@ public enum LogLevel: Int {
 }
 
 // MARK:
-// MARK: Automatic Configuration
-
-private func detectDefaultLevel() -> LogLevel {
-    #if LOGLEVELSILENT
-        return LogLevel.silent
-    #elseif LOGLEVELVERBOSE
-        return LogLevel.verbose
-    #elseif LOGLEVELDEBUG
-        return LogLevel.debug
-    #endif
-    
-    return LogLevel.error
-}
-
-// MARK:
 // MARK: Singleton
 
-let mainCabin = LogCabin(level: detectDefaultLevel())
+let mainCabin = LogCabin(level: .error)
 
 // MARK:
 // MARK: User-Facing Functions
@@ -64,7 +49,7 @@ public func setLogLevelPrefix(forLevel targetLevel: LogLevel, to newPrefix: Stri
 // MARK: LogCabin
 
 public class LogCabin {
-    public var level: LogLevel = detectDefaultLevel()
+    public var level: LogLevel = .error
     private var prefixes: [LogLevel : String] = [.error : "",
                                                  .verbose : "VERBOSE: ",
                                                  .debug : "DEBUG: "]
