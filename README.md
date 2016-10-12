@@ -68,4 +68,4 @@ uiCabin.log(.debug, "The login screen has appeared.")  // Will print as 'UI Debu
 Setting up instances of `LogCabin` can help you make logs specific to each part of an app. They're also handy if you're making a framework and want to keep everything in-house.
 
 ## License
-All rights - Zeke Abuhoff 2016
+[MIT License](LICENSE)

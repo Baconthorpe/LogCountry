@@ -9,7 +9,7 @@ LogCountry is a simple iOS logging framework written in Swift written by Zeke Ab
 
   s.homepage         = 'https://github.com/Baconthorpe/LogCountry'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Ezekiel Abuhoff' => 'zekeemail@zeke.com' }
+  s.author           = { 'Ezekiel Abuhoff' => 'zabuhoff@gmail.com' }
   s.source           = { :git => 'https://github.com/Baconthorpe/LogCountry.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
