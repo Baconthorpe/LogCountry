@@ -28,6 +28,28 @@ class LogCountryTests: XCTestCase {
         log(.debug, message)
     }
     
+    func readFile(named fileName: String) -> String? {
+        guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        
+        let path = dir.appendingPathComponent(fileName)
+        
+        do {
+            let text = try String(contentsOf: path, encoding: .utf8)
+            return text
+        }
+        catch { return nil }
+    }
+    
+    func deleteFile(named fileName: String) {
+        guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        
+        let path = dir.appendingPathComponent(fileName)
+        
+        do {
+            try FileManager.default.removeItem(at: path)
+        } catch { return }
+    }
+    
     // MARK:
     // MARK: Basic Logging
     
@@ -71,5 +93,22 @@ class LogCountryTests: XCTestCase {
         cabin.log(.error, message)
         cabin.log(.verbose, message)
         cabin.log(.debug, message)
+    }
+    
+    // MARK:
+    // MARK: Log to File
+    
+    func testLogToFile() {
+        let fileName = "bean"
+        deleteFile(named: fileName)
+        
+        writeLogs(to: fileName)
+        
+        configurePrefixes()
+        logAtAllLevels()
+        
+        let whatIRead = readFile(named: fileName)
+        guard let presentLogs = whatIRead else { XCTFail(); return }
+        XCTAssert(presentLogs == "ERROR PREFIX: MESSAGE\nVERBOSE PREFIX: MESSAGE\nDEBUG PREFIX: MESSAGE")
     }
 }

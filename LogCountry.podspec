@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'LogCountry'
-  s.version          = '0.14'
+  s.version          = '0.15'
   s.summary          = 'LogCountry is a simple iOS logging framework written in Swift.'
 
   s.description      = <<-DESC
