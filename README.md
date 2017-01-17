@@ -67,5 +67,22 @@ uiCabin.log(.debug, "The login screen has appeared.")  // Will print as 'UI Debu
 ```
 Setting up instances of `LogCabin` can help you make logs specific to each part of an app. They're also handy if you're making a framework and want to keep everything in-house.
 
+### Logging to a File
+
+You can store all your LogCountry logs in a file. Just specify a file name and LogCountry will record all logs there, with the appropriate log level prefixes, creating that file if it doesn't already exist.
+```swift
+writeLogs(to: "myLogs.txt")
+log("Captain's log, stardate 2017")
+log("We're having trouble with tribbles.")
+// These messages now appear in a file called 'myLogs.txt'
+```
+A `LogCabin` can also write to a file.
+```swift
+let networkCabin = LogCabin()
+networkCabin.write(to: "networkLogs.txt")
+networkCabin.log("Beginning network diagnostics...")
+```
+Whenever you have need of your log file, you can retrieve it from the documents directory.
+
 ## License
 [MIT License](LICENSE)
